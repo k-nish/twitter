@@ -18,3 +18,9 @@ for forecast in resp['forecasts']:
 
 params = {"status": result}
 req = twitter.post("https://api.twitter.com/1.1/statuses/update.json",params = params)
+
+# レスポンスを確認
+if req.status_code == 200:
+    print ("OK")
+else:
+    print ("Error: %d" % req.status_code)
