@@ -7,7 +7,7 @@ import urllib2, sys
 twitter = OAuth1Session(settings.CONSUMER_KEY, settings.CONSUMER_SECRET, settings.ACCESS_TOKEN, settings.ACCESS_TOKEN_SECRET)
 
 try: citycode = sys.argv[1]
-except: citycode = '130010' #デフォルト地域
+except: citycode = '130010' #デフォルト地域を東京にする
 resp = urllib2.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=%s'%citycode).read()
 
 resp = json.loads(resp)
